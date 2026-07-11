@@ -17,5 +17,7 @@ node_modules/
 # OS junk
 .DS_Store
 
-# Local screenshots (add your own to a docs/ folder if you want them in the repo)
+# Stray screenshots in the project root stay out of the repo;
+# screenshots that SHOULD be committed go in docs/
 *.png
+!docs/*.png
