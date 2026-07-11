@@ -38,7 +38,7 @@ const KafkaProducer = () => {
       </header>
 
       <div className="cards">
-        <div className="card">
+        <div className="card enroll">
           <h2>Kafka Mastery Course</h2>
           <p className="desc">
             Example "course" offer. Clicking simulates a user enrolling.
@@ -51,7 +51,7 @@ const KafkaProducer = () => {
           </button>
         </div>
 
-        <div className="card">
+        <div className="card buy">
           <h2>Monitoring Pro Bundle</h2>
           <p className="desc">
             Example "product" offer. Clicking simulates a user purchasing.

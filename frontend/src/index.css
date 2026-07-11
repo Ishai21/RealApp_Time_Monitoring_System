@@ -1,8 +1,8 @@
 :root {
   font-family: system-ui, -apple-system, Helvetica, Arial, sans-serif;
   line-height: 1.5;
-  color: #24292f;
-  background: #fafafa;
+  color: #1f2937;
+  background: #f5f7fa;
 }
 
 * {
@@ -27,12 +27,13 @@ body {
 }
 
 .header h1 {
-  font-size: 1.6rem;
-  margin: 0 0 6px;
+  font-size: 1.65rem;
+  margin: 0 0 8px;
+  color: #111827;
 }
 
 .header p {
-  color: #57606a;
+  color: #5b6472;
   margin: 0;
   font-size: 0.95rem;
 }
@@ -42,27 +43,38 @@ body {
 .cards {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 16px;
+  gap: 18px;
   margin-bottom: 24px;
 }
 
 .card {
   background: #fff;
-  border: 1px solid #d0d7de;
-  border-radius: 8px;
-  padding: 20px;
+  border: 1px solid #e3e8ef;
+  border-top: 3px solid #d0d7e2;
+  border-radius: 10px;
+  padding: 22px;
   display: flex;
   flex-direction: column;
   gap: 10px;
+  box-shadow: 0 1px 3px rgba(16, 24, 40, 0.06);
+}
+
+.card.enroll {
+  border-top-color: #2563eb; /* blue */
+}
+
+.card.buy {
+  border-top-color: #0d9488; /* teal */
 }
 
 .card h2 {
   margin: 0;
   font-size: 1.05rem;
+  color: #111827;
 }
 
 .card .desc {
-  color: #57606a;
+  color: #5b6472;
   font-size: 0.9rem;
   margin: 0;
   flex-grow: 1;
@@ -70,39 +82,60 @@ body {
 
 .card .topic {
   font-size: 0.8rem;
-  color: #57606a;
+  color: #5b6472;
 }
 
 .card .topic code {
-  background: #f6f8fa;
-  border: 1px solid #d0d7de;
   border-radius: 4px;
-  padding: 1px 6px;
+  padding: 2px 7px;
   font-size: 0.78rem;
 }
 
+.card.enroll .topic code {
+  background: #eff4ff;
+  color: #1d4ed8;
+  border: 1px solid #d5e2fc;
+}
+
+.card.buy .topic code {
+  background: #ecfaf8;
+  color: #0f766e;
+  border: 1px solid #c8ece8;
+}
+
 .card button {
-  border: 1px solid #d0d7de;
-  border-radius: 6px;
-  padding: 9px 14px;
+  border: none;
+  border-radius: 7px;
+  padding: 10px 14px;
   font-size: 0.95rem;
   font-weight: 600;
   font-family: inherit;
   cursor: pointer;
-  background: #f6f8fa;
-  color: #24292f;
+  color: #fff;
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 8px;
 }
 
-.card button:hover {
-  background: #eef1f4;
+.card.enroll button {
+  background: #2563eb;
+}
+
+.card.enroll button:hover {
+  background: #1d4ed8;
+}
+
+.card.buy button {
+  background: #0d9488;
+}
+
+.card.buy button:hover {
+  background: #0f766e;
 }
 
 .card .count {
-  background: #e7ebef;
+  background: rgba(255, 255, 255, 0.22);
   border-radius: 999px;
   min-width: 26px;
   padding: 1px 8px;
@@ -113,10 +146,10 @@ body {
 /* ---------- pipeline note ---------- */
 
 .pipeline {
-  color: #57606a;
+  color: #475467;
   font-size: 0.85rem;
   background: #fff;
-  border: 1px solid #d0d7de;
+  border: 1px solid #e3e8ef;
   border-radius: 8px;
   padding: 12px 16px;
   margin-bottom: 20px;
@@ -127,9 +160,9 @@ body {
 .status {
   font-size: 0.88rem;
   min-height: 1.4em;
-  color: #1a7f37;
+  color: #067647;
 }
 
 .status.error {
-  color: #cf222e;
+  color: #d92d20;
 }
