@@ -1,0 +1,21 @@
+# Prometheus scrape configuration for this project.
+#
+# Prometheus is PULL-based: it only collects metrics from the targets listed
+# here. The consumer service exposes its counters at :8082/metrics
+# (started by PrometheusConfig.java).
+#
+# Usage:
+#   - Running Prometheus yourself:  prometheus --config.file=monitoring/prometheus.yml
+#   - Ubuntu/Debian package: merge the scrape_configs job below into
+#     /etc/prometheus/prometheus.yml and run: sudo systemctl restart prometheus
+
+global:
+  scrape_interval: 5s # how often to read the metrics page (default is 15s)
+
+scrape_configs:
+  - job_name: "kafka-consumer"
+    static_configs:
+      # Assumes Prometheus runs on the same machine as the consumer service.
+      # If they run on different machines, replace localhost with the
+      # consumer's address (and make sure port 8082 is reachable).
+      - targets: ["localhost:8082"]

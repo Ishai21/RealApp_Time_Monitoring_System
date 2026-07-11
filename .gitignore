@@ -1,0 +1,21 @@
+# Build outputs
+build/
+bin/
+dist/
+
+# Gradle
+.gradle/
+
+# IDE
+.idea/
+*.iml
+.vscode/
+
+# Node
+node_modules/
+
+# OS junk
+.DS_Store
+
+# Local screenshots (add your own to a docs/ folder if you want them in the repo)
+*.png

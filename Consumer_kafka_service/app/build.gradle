@@ -1,0 +1,33 @@
+plugins {
+    id 'application'
+    id 'java'
+    id 'org.springframework.boot' version '3.2.5'
+    id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter-web'   // Spring web server (port 8081)
+    implementation 'org.springframework.kafka:spring-kafka'             // @KafkaListener support
+
+    // Prometheus client: counters + the standalone /metrics server on port 8082
+    implementation 'io.prometheus:simpleclient:0.16.0'
+    implementation 'io.prometheus:simpleclient_hotspot:0.16.0'    // JVM metrics (memory, threads, GC)
+    implementation 'io.prometheus:simpleclient_httpserver:0.16.0' // the mini HTTP server
+}
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_21
+    targetCompatibility = JavaVersion.VERSION_21
+
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(21)
+    }
+}
+
+application {
+    mainClass = 'org.example.App'
+}
