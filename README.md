@@ -158,6 +158,28 @@ To run the consumer as a proper server process (instead of `gradlew run`):
 nohup java -Xmx256m -jar app/build/libs/app.jar > ~/consumer.log 2>&1 &
 ```
 
+## Screenshots — the system running
+
+**Frontend** — each card publishes to its own Kafka topic; the counters track this session's clicks:
+
+![Frontend](docs/frontend.png)
+
+**Producer service** — every click confirmed by the broker with its offset (the message's position in the topic):
+
+![Producer logs](docs/producer.png)
+
+**Consumer service** (running on a remote Linux server) — pulling the same events off Kafka:
+
+![Consumer logs](docs/consumer.png)
+
+**Prometheus** — the `kafka-consumer` scrape target healthy (UP):
+
+![Prometheus targets](docs/targets.png)
+
+**Grafana** — totals, events over time, and clicks-per-second rate, updating live as buttons are clicked:
+
+![Grafana dashboard](docs/grafana-dashboard.png)
+
 ## Troubleshooting
 
 | Symptom | Likely cause |
