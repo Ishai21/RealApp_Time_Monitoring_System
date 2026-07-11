@@ -1,12 +1,8 @@
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: system-ui, -apple-system, Helvetica, Arial, sans-serif;
   line-height: 1.5;
-  color-scheme: dark;
-  color: #e6e9ef;
-  background: #0f1219;
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
+  color: #24292f;
+  background: #fafafa;
 }
 
 * {
@@ -16,233 +12,124 @@
 body {
   margin: 0;
   min-height: 100vh;
-  background:
-    radial-gradient(1000px 500px at 80% -10%, rgba(88, 101, 242, 0.18), transparent),
-    radial-gradient(800px 400px at 10% 110%, rgba(250, 204, 21, 0.10), transparent),
-    #0f1219;
 }
 
 .page {
-  max-width: 980px;
+  max-width: 760px;
   margin: 0 auto;
-  padding: 48px 24px 64px;
+  padding: 48px 20px;
 }
 
 /* ---------- header ---------- */
 
 .header {
-  text-align: center;
-  margin-bottom: 40px;
-}
-
-.badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  font-size: 0.8rem;
-  font-weight: 600;
-  letter-spacing: 0.04em;
-  color: #9fb0d0;
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 999px;
-  padding: 6px 14px;
-  margin-bottom: 18px;
-}
-
-.badge .dot {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: #4ade80;
-  animation: pulse 1.6s ease-in-out infinite;
-}
-
-@keyframes pulse {
-  0%, 100% { box-shadow: 0 0 0 0 rgba(74, 222, 128, 0.55); }
-  50% { box-shadow: 0 0 0 7px rgba(74, 222, 128, 0); }
+  margin-bottom: 32px;
 }
 
 .header h1 {
-  font-size: clamp(1.8rem, 4vw, 2.6rem);
-  margin: 0 0 10px;
-  background: linear-gradient(90deg, #facc15, #5865f2);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
+  font-size: 1.6rem;
+  margin: 0 0 6px;
 }
 
 .header p {
-  color: #9fb0d0;
+  color: #57606a;
   margin: 0;
-  font-size: 1.02rem;
+  font-size: 0.95rem;
 }
 
 /* ---------- cards ---------- */
 
 .cards {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 22px;
-  margin-bottom: 36px;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 16px;
+  margin-bottom: 24px;
 }
 
 .card {
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(255, 255, 255, 0.09);
-  border-radius: 16px;
-  padding: 26px;
+  background: #fff;
+  border: 1px solid #d0d7de;
+  border-radius: 8px;
+  padding: 20px;
   display: flex;
   flex-direction: column;
-  gap: 12px;
-  transition: transform 0.15s ease, border-color 0.15s ease;
-}
-
-.card:hover {
-  transform: translateY(-3px);
-}
-
-.card.funny:hover { border-color: rgba(250, 204, 21, 0.5); }
-.card.serious:hover { border-color: rgba(88, 101, 242, 0.6); }
-
-.card .emoji {
-  font-size: 2rem;
+  gap: 10px;
 }
 
 .card h2 {
   margin: 0;
-  font-size: 1.25rem;
+  font-size: 1.05rem;
 }
 
 .card .desc {
-  color: #9fb0d0;
-  font-size: 0.94rem;
+  color: #57606a;
+  font-size: 0.9rem;
   margin: 0;
   flex-grow: 1;
 }
 
 .card .topic {
-  font-size: 0.78rem;
-  color: #7c8bab;
-  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.8rem;
+  color: #57606a;
 }
 
 .card .topic code {
-  color: #c9d4ec;
-  background: rgba(255, 255, 255, 0.07);
-  border-radius: 5px;
-  padding: 2px 7px;
+  background: #f6f8fa;
+  border: 1px solid #d0d7de;
+  border-radius: 4px;
+  padding: 1px 6px;
+  font-size: 0.78rem;
 }
 
 .card button {
-  border: none;
-  border-radius: 10px;
-  padding: 13px 18px;
-  font-size: 1rem;
-  font-weight: 700;
+  border: 1px solid #d0d7de;
+  border-radius: 6px;
+  padding: 9px 14px;
+  font-size: 0.95rem;
+  font-weight: 600;
   font-family: inherit;
   cursor: pointer;
-  color: #101319;
-  transition: filter 0.15s ease, transform 0.05s ease;
+  background: #f6f8fa;
+  color: #24292f;
   display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-}
-
-.card button:hover { filter: brightness(1.12); }
-.card button:active { transform: scale(0.98); }
-
-.card.funny button { background: linear-gradient(135deg, #fde047, #f59e0b); }
-.card.serious button { background: linear-gradient(135deg, #818cf8, #5865f2); color: #fff; }
-
-.card .count {
-  background: rgba(0, 0, 0, 0.25);
-  border-radius: 999px;
-  min-width: 30px;
-  padding: 2px 9px;
-  font-size: 0.88rem;
-}
-
-/* ---------- pipeline strip ---------- */
-
-.pipeline {
-  display: flex;
-  flex-wrap: wrap;
   align-items: center;
   justify-content: center;
   gap: 8px;
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 14px;
-  padding: 16px 18px;
-  margin-bottom: 26px;
 }
 
-.pipeline .stage {
+.card button:hover {
+  background: #eef1f4;
+}
+
+.card .count {
+  background: #e7ebef;
+  border-radius: 999px;
+  min-width: 26px;
+  padding: 1px 8px;
   font-size: 0.85rem;
-  color: #c9d4ec;
-  background: rgba(255, 255, 255, 0.06);
+  font-weight: 500;
+}
+
+/* ---------- pipeline note ---------- */
+
+.pipeline {
+  color: #57606a;
+  font-size: 0.85rem;
+  background: #fff;
+  border: 1px solid #d0d7de;
   border-radius: 8px;
-  padding: 7px 12px;
-  white-space: nowrap;
-}
-
-.pipeline .stage.lit {
-  background: rgba(74, 222, 128, 0.18);
-  color: #4ade80;
-  transition: background 0.3s ease;
-}
-
-.pipeline .arrow {
-  color: #56618a;
-  font-size: 0.9rem;
-}
-
-/* ---------- toasts ---------- */
-
-.toasts {
-  position: fixed;
-  bottom: 22px;
-  right: 22px;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  z-index: 10;
-}
-
-.toast {
-  background: #171c28;
-  border: 1px solid rgba(74, 222, 128, 0.45);
-  border-radius: 10px;
   padding: 12px 16px;
-  font-size: 0.9rem;
-  color: #d9f7e5;
-  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.45);
-  animation: slideIn 0.25s ease;
+  margin-bottom: 20px;
 }
 
-.toast.error {
-  border-color: rgba(248, 113, 113, 0.55);
-  color: #fecaca;
-}
+/* ---------- status line ---------- */
 
-@keyframes slideIn {
-  from { opacity: 0; transform: translateX(24px); }
-  to { opacity: 1; transform: translateX(0); }
-}
-
-/* ---------- footer ---------- */
-
-.footer {
-  text-align: center;
-  color: #7c8bab;
+.status {
   font-size: 0.88rem;
+  min-height: 1.4em;
+  color: #1a7f37;
 }
 
-.footer code {
-  background: rgba(255, 255, 255, 0.06);
-  border-radius: 5px;
-  padding: 2px 7px;
-  font-size: 0.82rem;
+.status.error {
+  color: #cf222e;
 }
